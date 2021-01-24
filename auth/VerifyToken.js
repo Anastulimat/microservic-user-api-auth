@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken');
 
 const verifyToken = (req, res, next) => {
     try {
-        const token = req.header['x-access-token'];
+        const token = req.headers['x-access-token'];
         if(!token)
             return res.status(403).json({auth: false, message: "No token provided."});
 
@@ -13,11 +13,12 @@ const verifyToken = (req, res, next) => {
         {
             throw 'Failed to authenticate token.';
         }
+        req.userId = userId;
         next();
     }
     catch (error)
     {
-        res.status(401).json({error: error | 'Request not authenticated.'});
+        res.status(401).json({error: error + ' Request not authenticated.'});
     }
 }
 

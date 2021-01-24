@@ -23,5 +23,8 @@ app.get('/api', (req, res) => {
 const UserController = require(ROOT + 'user/UserController');
 app.use('/api/users', UserController);
 
+const AuthController = require(ROOT + 'auth/AuthController');
+app.use('/api/auth', AuthController);
+
 module.exports = app;
 
