@@ -1,12 +1,12 @@
 # Docker
 
-##Build docker 
+## Build docker 
 >docker build -t auth-jwt .
 
-##Run docker container (Attached mode)
+## Run docker container (Attached mode)
 >docker run -it -p 5000:5000 auth-jwt
 
-##Run docker container (detached mode)
+## Run docker container (detached mode)
 >docker run -d -p 5000:5000 auth-jwt
 
 
